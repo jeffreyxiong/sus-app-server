@@ -14,8 +14,8 @@ import dv from 'dotenv';
 dv.load();
 
 
-var mu = multer(),
-    app = express(),
+var app = express(),
+    upload = multer().single('file')
     port = process.env.PORT || 3000;
 
 // app.use(express.static(__dirname + '/views'));
@@ -30,7 +30,7 @@ app.post('/email', function(req, res) {
     // Start mailgun
     let mg = new mailgun({apiKey: process.env.MAILGUN_API_KEY, domain: process.env.MAILGUN_DOMAIN})
     
-    mu(req, res, function(err) {
+    upload(req, res, function(err) {
         if (err) {
             console.log('Error parsing multipart request.');
             res.status(300).end();
