@@ -16,24 +16,12 @@ dv.load();
 var app = express(),
     port = process.env.PORT || 3000;
 
-app.use(express.static(__dirname + '/views'));
+// app.use(express.static(__dirname + '/views'));
 app.set('view engine', 'pug');
 
 ///////////////////////////////////////////////////////////////////////////////
 // Routing                                                                   //
 ///////////////////////////////////////////////////////////////////////////////
-
-app.get('/', function(req, res) {
-
-    res.render('index.html', function(err, html) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.send(html);
-        }
-    });
-
-});
 
 app.post('/email', function(req, res) {
 
