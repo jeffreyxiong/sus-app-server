@@ -49,14 +49,17 @@ app.post('/email', function(req, res) {
         from: 'jx13@rice.edu',
         to: email,
         subject: 'SUS App Data - ' + study,
+        attachment: file,
         html: 'Your study data is attached as a tab-delimited file.'
     }
     
     mailgun.messages().send(data, function(err, body) {
         if (err) {
             console.log('Error sending email.');
+            res.status(300).end();
         } else {
             console.log(body);
+            res.status(200).end();
         }
     });
 });
