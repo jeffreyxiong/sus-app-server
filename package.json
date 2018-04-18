@@ -1,0 +1,23 @@
+{
+  "name": "sus-app-server",
+  "version": "1.0.0",
+  "description": "Simple server for sus-app",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffreyxiong/sus-app-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeffreyxiong/sus-app-server/issues"
+  },
+  "homepage": "https://github.com/jeffreyxiong/sus-app-server#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mailgun-js": "^0.16.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0"
+  }
+}
