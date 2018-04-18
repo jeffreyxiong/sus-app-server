@@ -13,7 +13,9 @@ import dv from 'dotenv';
 ///////////////////////////////////////////////////////////////////////////////
 dv.load();
 
-var app = express(),
+
+var mu = multer(),
+    app = express(),
     port = process.env.PORT || 3000;
 
 // app.use(express.static(__dirname + '/views'));
@@ -29,7 +31,7 @@ app.post('/email', function(req, res) {
     let mg = new mailgun({apiKey: process.env.MAILGUN_API_KEY, domain: process.env.MAILGUN_DOMAIN})
     
     // Get data
-    var file = req.file;
+    // var file = req.file;
     var email = req.body.email;
     var study = req.body.study;
 
