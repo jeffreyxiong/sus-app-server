@@ -17,8 +17,10 @@
     "start": "nodemon server.js --exec babel-node --presets env"
   },
   "dependencies": {
+    "dotenv": "^5.0.1",
     "express": "^4.16.3",
-    "mailgun-js": "^0.16.0"
+    "mailgun-js": "^0.16.0",
+    "pug": "^2.0.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
