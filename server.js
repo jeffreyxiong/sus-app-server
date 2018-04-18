@@ -15,7 +15,7 @@ dv.load();
 
 
 var app = express(),
-    upload = multer().single('file')
+    upload = multer().single('file'),
     port = process.env.PORT || 3000;
 
 // app.use(express.static(__dirname + '/views'));
