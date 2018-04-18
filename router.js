@@ -1,10 +1,6 @@
-import Controller from 'controller';
+import Controller from './controller';
 
 export default function (app) {
 
-    
-
-    app.route('/email')
-        .post();
-
+    app.route('/').get();
 }

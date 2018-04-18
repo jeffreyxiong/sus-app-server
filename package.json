@@ -13,12 +13,16 @@
     "url": "https://github.com/jeffreyxiong/sus-app-server/issues"
   },
   "homepage": "https://github.com/jeffreyxiong/sus-app-server#readme",
+  "scripts": {
+    "start": "nodemon server.js --exec babel-node --presets env"
+  },
   "dependencies": {
     "express": "^4.16.3",
     "mailgun-js": "^0.16.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "nodemon": "^1.17.3"
   }
 }

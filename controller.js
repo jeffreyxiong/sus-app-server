@@ -6,7 +6,7 @@ export default class Controller {
 
     }
     
-    handle_email = (res, req) => {
-        
+    handle_email(res, req) {
+
     }
 } 
