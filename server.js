@@ -41,7 +41,7 @@ app.post('/email', function(req, res) {
             var file = req.file,
                 email = req.body.email,
                 study = req.body.study,
-                attachment = new mailgun.Attachment({
+                attachment = new mg.Attachment({
                     data: file.buffer,
                     filename: file.originalname,
                     knownLength: file.size,
