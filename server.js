@@ -54,7 +54,7 @@ app.post('/email', function(req, res) {
     
     mg.messages().send(data, function(err, body) {
         if (err) {
-            console.log('Error sending email.');
+            console.log(err);
             res.status(300).end();
         } else {
             console.log('Emailed successfully.')
