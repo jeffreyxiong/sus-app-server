@@ -38,17 +38,21 @@ app.post('/email', function(req, res) {
             console.log(req.body);
             
             // Get data
-            var file = req.file;
-            var email = req.body.email;
-            var study = req.body.study;
-
-            console.log(file);
+            var file = req.file,
+                email = req.body.email,
+                study = req.body.study,
+                attachment = new mailgun.Attachment({
+                    data: file.buffer,
+                    filename: file.originalname,
+                    knownLength: file.size,
+                    contentType: file.mimetype
+                });
 
             var data = {
                 from: 'jx13@rice.edu',
                 to: email,
                 subject: 'SUS App Data - ' + study,
-                attachment: file,
+                attachment: attachment,
                 html: 'Your study data is attached as a tab-delimited file.'
             }
             
