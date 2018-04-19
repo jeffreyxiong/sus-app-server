@@ -36,35 +36,33 @@ app.post('/email', function(req, res) {
             res.status(300).end();
         } else {
             console.log(req.body);
-        }
-    });
+            
+            // Get data
+            var file = req.file;
+            var email = req.body.email;
+            var study = req.body.study;
+            
+            console.log(typeof email);
+            console.log(typeof study);
+            console.log(typeof file);
 
-    // Get data
-    var file = req.file;
-    var email = req.body.email;
-    var study = req.body.study;
-
-    console.log(email);
-    console.log(typeof email);
-    console.log(study);
-    console.log(typeof study);
-    console.log(typeof file);
-
-    var data = {
-        from: 'jx13@rice.edu',
-        to: email,
-        subject: 'SUS App Data - ' + study,
-        attachment: file,
-        html: 'Your study data is attached as a tab-delimited file.'
-    }
-    
-    mg.messages().send(data, function(err, body) {
-        if (err) {
-            console.log(err);
-            res.status(300).end();
-        } else {
-            console.log('Emailed successfully.')
-            res.status(200).end();
+            var data = {
+                from: 'jx13@rice.edu',
+                to: email,
+                subject: 'SUS App Data - ' + study,
+                attachment: file,
+                html: 'Your study data is attached as a tab-delimited file.'
+            }
+            
+            mg.messages().send(data, function(err, body) {
+                if (err) {
+                    console.log(err);
+                    res.status(300).end();
+                } else {
+                    console.log('Emailed successfully.')
+                    res.status(200).end();
+                }
+            });
         }
     });
 });
