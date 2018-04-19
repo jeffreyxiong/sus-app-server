@@ -44,6 +44,12 @@ app.post('/email', function(req, res) {
     var email = req.body.email;
     var study = req.body.study;
 
+    console.log(email);
+    console.log(typeof email);
+    console.log(study);
+    console.log(typeof study);
+    console.log(typeof file);
+
     var data = {
         from: 'jx13@rice.edu',
         to: email,
