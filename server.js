@@ -40,7 +40,7 @@ app.post('/email', function(req, res) {
             // Get data
             var file = req.file,
                 email = req.body.email,
-                study = req.body.study,
+                product = req.body.product,
                 attachment = new mg.Attachment({
                     data: file.buffer,
                     filename: file.originalname,
@@ -51,9 +51,9 @@ app.post('/email', function(req, res) {
             var data = {
                 from: 'jx13@rice.edu',
                 to: email,
-                subject: 'SUS App Data - ' + study,
+                subject: 'SUS App Data - ' + product,
                 attachment: attachment,
-                html: 'Your study data is attached as a tab-delimited file.'
+                html: 'Your product data is attached as a tab-delimited file.'
             }
             
             mg.messages().send(data, function(err, body) {
