@@ -49,7 +49,7 @@ app.post('/email', function(req, res) {
                 });
 
             var data = {
-                from: 'jx13@rice.edu',
+                from: process.env.SENDER_EMAIL,
                 to: email,
                 subject: 'SUS App Data - ' + product,
                 attachment: attachment,
